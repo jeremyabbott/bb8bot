@@ -1,5 +1,4 @@
-
-process.env.token = 'insert token here';
+require ('./config.js');
 var edge = require('edge');
 var Botkit = require('botkit');
 var hello = edge.func('./lib/test.dll');
@@ -30,7 +29,10 @@ controller.spawn({
 
 
 controller.hears(['hello','hi'],['direct_message','direct_mention','mention'],function(bot,message) {
-    bot.reply(message,"Hello.");
+     hello(null, function (error, result) {
+        if (error) throw error;
+        bot.reply(message, result + " " + "http://gph.is/1LL3Pi3");
+    });
 });
 
 controller.hears(['attach'],['direct_message','direct_mention'],function(bot,message) {
@@ -79,18 +81,4 @@ controller.hears(['dm me'],['direct_message','direct_mention'],function(bot,mess
     dm.say('Private reply!');
   });
 
-});
-
-controller.hears(['edgejs'],['direct_message','direct_mention','mention'],function(bot,message) {
-    helloWorld('JavaScript', function (error, result) {
-        if (error) throw error;
-        bot.reply(message, result);
-    });
-});
-
-controller.hears(['assembly'],['direct_message','direct_mention','mention'],function(bot,message) {
-    hello(null, function (error, result) {
-        if (error) throw error;
-        bot.reply(message, result);
-    });
 });

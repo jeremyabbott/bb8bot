@@ -1,0 +1,24 @@
+{
+  "name": "bb8bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "botkit": "0.0.5",
+    "edge": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremyabbott/bb8bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeremyabbott/bb8bot/issues"
+  },
+  "homepage": "https://github.com/jeremyabbott/bb8bot#readme"
+}
